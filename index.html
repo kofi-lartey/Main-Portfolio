@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Exile&family=Luckiest+Guy&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Rubik+Maps&display=swap"
+        rel="stylesheet">
+    <script src="./scripts/index.js" defer></script>
+</head>
+
+<body>
+    <header class="bg-[url(./images/mainbg.jpg)] md:h-screen bg-no-repeat bg-cover bg-center pt-24">
+        <nav
+            class="flex flex-col md:flex-row  md:justify-center md:items-center gap-10 md:gap-20 h-13 text-white font-bold fixed top-0 w-full z-50 absolute inset-0 backdrop-blur-sm">
+
+            <a href="" id="Home"><span class="font-extrabold text-2xl md:text-[#1B5BA2] text-center shadow-[0_0_0px_#1B5BA2] text-[1rem] md:p-2 p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#1B5BA2] px-41 hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:backdrop-blur-sm">KOFILARTEY</span></a>
+            <div
+                class="flex flex-col md:flex-row justify-center gap-5 bg-[#1B5BA2] p-5 w-15 md:w-1/2 md:bg-transparent">
+                <a href="#Home" title="Home">
+                    <i class="fa-solid fa-house shadow-[0_0_6px_#1B5BA2] text-[1rem] p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white "></i>
+                </a>
+                <a href="#About" title="AboutUs">
+                    <i class="fa-solid fa-user-tie shadow-[0_0_6px_#1B5BA2] text-[1rem] p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
+                </a>
+                <a href="#services" title="Services">
+                    <i class="fa-sharp fa-solid fa-layer-group shadow-[0_0_6px_#1B5BA2] text-[1rem] p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
+                </a>
+                <a href="index.html" title="ProjectGallery">
+                    <i class="fa-solid fa-house shadow-[0_0_6px_#1B5BA2] text-[1rem] p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
+                </a>
+                <a href="#resume" title="Resume">
+                    <i class="fa-solid fa-suitcase shadow-[0_0_6px_#1B5BA2] text-[1rem] p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
+                </a>
+                <a href="#contact" title="ContactInfo">
+                    <i class="fa-solid fa-id-card-clip shadow-[0_0_6px_#1B5BA2] text-[1rem] p-2 rounded-full transition ease-in-out duration-300 text-black bg-transparent transition transform duration-300
+            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
+                </a>
+            </div>
+        </nav>
+
+        <div class="flex flex-col md:flex-row gap-5 items-center  md:mt-5 ">
+
+            <div class=" flex flex-col text-[#1B5BA2] font-bold justify-center pl-20 md:pl-55 md:pt-5 pt-2 gap-3">
+                <h1 class="md:text-6xl text-3xl ">GBERBIE ALPHEAUS</h1>
+                <p class="md:text-4xl text-2xl">I'm a <span id="changing-text" class="text-[#1B5BA2]"></span></p>
+
+                <div class="flex gap-5 md:text-2xl items-center ">
+                    <a href=""><i class="fa-brands fa-facebook shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-2 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
+            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
+            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
+            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
+            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
+            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
+                </div>
+                <button class="text-xl w-50 md:36 mt-3 md:w-40 bg-[#1B5BA2] text-white shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-[#1B5BA2] transition transform duration-300
+            hover:text-[#1B5BA2] hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white">HIRE ME</button>
+            </div>
+            <img src="./images/kof3.png" class="mr-10 w-40 md:w-93.5" alt="">
+        </div>
+    </header>
+    <section class="h-screen " >
+        <div
+            class="flex flex-col text-center justify-center items-center md:p-10 backdrop-blur-sm ">
+            <div>
+                <a href="" id="About">
+                    <h1 class="md:text-6xl text-3xl uppercase mt-10 font-extrabold text-[#1B5BA2] md:text-[#1B5BA2] text-center shadow-[0_0_0px_] md:p-2 p-2 rounded-full transition ease-in-out duration-300 bg-transparent transition transform duration-300 text-[#1B5BA2]
+            hover:text-[#1B5BA2] px-10 mt-25 hover:scale-[1.2] hover:-translate-x-[5px]
+            hover:shadow-[0_0_0px_#1B5BA2] hover:backdrop-blur-sm">Professional <br> summary</h1>
+                </a>
+                <button id="resume" class="text-xl w-50 md:36  md:w-40 bg-[#1B5BA2] text-white shadow-[0_0_6px_#FFFFFF] text-[1rem] font-bold px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-[#1B5BA2] transition transform duration-300
+            hover:text-[#1B5BA2] hover:scale-[1.3] hover:-translate-y-[5px]
+            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white">Download CV</button>
+            </div>
+            <p
+                class="w-100 md:w-260 rounded-[5%] p-10 bg-transparent backdrop-blur-[30px] shadow-[0px_1px_10px_1px_black]">
+                I’m Gberbie Alpheaus Lartey, a multidisciplinary professional with a unique blend of skills in backend web development, music education, photography, and graphic design. I combine technical precision with artistic vision to create efficient, secure, and user-friendly web solutions using HTML, CSS, and JavaScript. As a music educator, I specialize in vocal coaching and have experience with piano, drums, trumpet, and trombone, offering a patient and structured teaching approach. In the creative field, I’m an experienced photographer and graphic designer, skilled in Adobe Photoshop and Illustrator, creating visuals that communicate and inspire. With a holistic perspective and a commitment to excellence, I bring creativity, clarity, and impact to every project I undertake.
+            </p>
+        </div>
+    </section>
+
+    <section
+        class=" flex flex-col justify-center items-center h-[70vh] md:h-[100vh] mt-30 md:m-15 rounded-[20%]  bg-[#D3D5EA] backdrop-blur-[30px] shadow-[0px_1px_10px_1px_#1B5BA2] text-[#1B5BA2] "
+        id="services">
+        <h2 class="text-2xl font-bold mb-4 font-extrabold">SERVICES</h2>
+
+        <!-- Photography -->
+        <div class=" border rounded-lg mb-4">
+            <button data-toggle="photography-info"
+                class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2 font-bold">
+                <i class="fas fa-camera"></i> Photography
+            </button>
+            <div id="photography-info"
+                class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
+                <p><strong>Portrait Photography:</strong> Professional headshots and personal portraits with artistic
+                    lighting and composition.</p>
+                <p><strong>Event Coverage:</strong> Capture weddings, parties, and special events with a candid and
+                    documentary style.</p>
+                <p><strong>Product Shoots:</strong> High-quality images for advertising, catalogs, or e-commerce
+                    platforms.</p>
+            </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="border rounded-lg mb-4">
+            <button data-toggle="webdev-info" class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2">
+                <i class="fas fa-laptop-code"></i> Web Development
+            </button>
+            <div id="webdev-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
+                <p><strong>Frontend & Backend:</strong> Build responsive interfaces and robust backend systems using
+                    modern technologies.</p>
+                <p><strong>Responsive Design:</strong> Ensure websites look and work great on all screen sizes.</p>
+                <p><strong>Maintenance & Hosting:</strong> Ongoing updates, backups, and secure web hosting solutions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Videographer -->
+        <div class="border rounded-lg mb-4">
+            <button data-toggle="video-info" class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2">
+                <i class="fas fa-video"></i> Videographer
+            </button>
+            <div id="video-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
+                <p><strong>Event Coverage:</strong> Film special moments at weddings, concerts, and corporate events.
+                </p>
+                <p><strong>Music Videos:</strong> Conceptual and performance-based visuals for artists and bands.</p>
+                <p><strong>Editing & Post-Production:</strong> Professional video editing with effects, color
+                    correction, and audio mastering.</p>
+            </div>
+        </div>
+
+        <!-- Graphic Design -->
+        <div class="border rounded-lg mb-4">
+            <button data-toggle="design-info" class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2">
+                <i class="fas fa-paint-brush"></i> Graphic Design
+            </button>
+            <div id="design-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
+                <p><strong>Logo Design:</strong> Create memorable brand identities tailored to your vision and market.
+                </p>
+                <p><strong>Posters & Flyers:</strong> Eye-catching promotional materials for events, products, and
+                    services.</p>
+                <p><strong>Social Media Graphics:</strong> Engaging content to boost your online presence and brand
+                    awareness.</p>
+            </div>
+        </div>
+
+        <!-- Professional Teacher -->
+        <div class="border rounded-lg mb-4">
+            <button data-toggle="teacher-info" class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2">
+                <i class="fas fa-chalkboard-teacher"></i> Professional Teacher
+            </button>
+            <div id="teacher-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
+                <p><strong>Vocal Coaching:</strong> Improve vocal technique, range, and confidence for all skill levels.
+                </p>
+                <p><strong>Instrument Instruction:</strong> Personalized lessons for piano, drums, trumpet, trombone,
+                    and more.</p>
+                <p><strong>Music Theory & Performance:</strong> Build a solid foundation and enhance stage presence.</p>
+            </div>
+
+        </div>
+        <div class="flex flex-row gap-10 text-6xl text-[#1B5BA2] ">
+            <i class="fa-brands fa-html5"></i>
+            <i class="fa-brands fa-css3"></i>
+            <i class="fa-brands fa-js"></i>
+        </div>
+
+    </section>
+
+    <section class="h-screen">
+        <h1 class="text-2xl font-bold mb-4 font-extrabold text-center m-10">Project Gallery</h1>
+        <div class="flex flex-col gap-10 justify-between items-center space-y-6 transform">
+            <!-- container that holds both text and pictures -->
+            <div class="flex flex-col gap-5 justify-between text-center ">
+                <!-- Trigger Text -->
+                <h1 class="text-blue-600 cursor-pointer uppercase " onclick="toggleImages()">Photography</h1>
+                <!-- Hidden Text -->
+                <div id="Images1" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="1">
+                    <img class="w-80 rounded-[10%] " src="./images/bg2.jpg" alt="2">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="3">
+                </div>
+            </div>
+            <!-- container that holds both text and pictures -->
+            <div class="flex flex-col gap-5 justify-between text-center ">
+                <!-- Trigger Text -->
+                <h1 class="text-blue-600 cursor-pointer uppercase " onclick="toggleImages()">Web Development</h1>
+                <!-- Hidden Text -->
+                <div id="Images2" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="1">
+                    <img class="w-80 rounded-[10%] " src="./images/bg2.jpg" alt="2">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="3">
+                </div>
+            </div>
+            <!-- container that holds both text and pictures -->
+            <div class="flex flex-col gap-5 justify-between text-center">
+                <!-- Trigger Text -->
+                <h1 class="text-blue-600 cursor-pointer uppercase " onclick="toggleImages()">Videography</h1>
+                <!-- Hidden Text -->
+                <div id="Images3" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="1">
+                    <img class="w-80 rounded-[10%] " src="./images/bg2.jpg" alt="2">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="3">
+                </div>
+            </div>
+            <!-- container that holds both text and pictures -->
+            <div class="flex flex-col gap-5 justify-between text-center ">
+                <!-- Trigger Text -->
+                <h1 class="text-blue-600 cursor-pointer uppercase " onclick="toggleImages()">Graphic Design</h1>
+                <!-- Hidden Text -->
+                <div id="Images4" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="1">
+                    <img class="w-80 rounded-[10%] " src="./images/bg2.jpg" alt="2">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="3">
+                </div>
+            </div>
+            <!-- container that holds both text and pictures -->
+            <div class="flex flex-col gap-5 justify-between text-center">
+                <!-- Trigger Text -->
+                <h1 class="text-blue-600 cursor-pointer uppercase " onclick="toggleImages()">Professional Teacher</h1>
+                <!-- Hidden Text -->
+                <div id="Images5" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="1">
+                    <img class="w-80 rounded-[10%] " src="./images/bg2.jpg" alt="2">
+                    <img class="w-80 rounded-[10%]" src="./images/bg2.jpg" alt="3">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 px-6 bg-[#0a192f] text-white">
+        <h2 id="contact" class="text-4xl font-bold text-center mb-10">
+            Contact <span class="text-[#59B2F4]">Me</span>
+        </h2>
+
+        <form action="#" class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="text" placeholder="Full Name"
+                class="w-full px-4 py-3 rounded bg-[#191f36] text-white focus:outline-none" />
+
+            <input type="email" placeholder="Email Address"
+                class="w-full px-4 py-3 rounded bg-[#191f36] text-white focus:outline-none" />
+
+            <input type="text" placeholder="Mobile Number"
+                class="w-full px-4 py-3 rounded bg-[#191f36] text-white focus:outline-none" />
+
+            <input type="text" placeholder="Email Subject"
+                class="w-full px-4 py-3 rounded bg-[#191f36] text-white focus:outline-none" />
+
+            <!-- Full width for message area -->
+            <textarea placeholder="Your Message" rows="6"
+                class="md:col-span-2 w-full px-4 py-3 rounded bg-[#191f36] text-white focus:outline-none"></textarea>
+
+            <!-- Button centered below -->
+            <div class="md:col-span-2 text-center">
+                <button type="submit"
+                    class="bg-[#59B2F4] text-black px-8 py-3 rounded-full font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-[0-0-20px-#59B2F4] focus:outline-none">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-[#262b40] text-center py-6 mt-10">
+        <p class="text-sm">&copy; 2025 by Gberbie Alpheaus Lartey | All Rights Reserved</p>
+        <div class="mt-4">
+            <a href="#home"
+                class="inline-flex items-center justify-center bg-[#59B2F4] text-[#262b40] w-10 h-10 rounded-md hover:shadow-lg transition">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
