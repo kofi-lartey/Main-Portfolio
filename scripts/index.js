@@ -1,9 +1,9 @@
 const texts = [
-    "Frontend Web Developer",
-    "Photographer",
-    "Videographer",
-    "Graphic Designer",
-    "Professional Teacher"
+  "Frontend Web Developer",
+  "Photographer",
+  "Videographer",
+  "Graphic Designer",
+  "Professional Teacher"
 ];
 
 let count = 0;
@@ -13,33 +13,33 @@ let letter = '';
 const textElement = document.getElementById('changing-text');
 
 function type() {
-    if (!textElement) return;
+  if (!textElement) return;
 
-    if (count === texts.length) count = 0;
-    currentText = texts[count];
-    letter = currentText.slice(0, ++index);
+  if (count === texts.length) count = 0;
+  currentText = texts[count];
+  letter = currentText.slice(0, ++index);
 
-    textElement.textContent = letter;
+  textElement.textContent = letter;
 
-    if (letter.length === currentText.length) {
-        setTimeout(() => {
-            erase();
-        }, 1500);
-    } else {
-        setTimeout(type, 100);
-    }
+  if (letter.length === currentText.length) {
+    setTimeout(() => {
+      erase();
+    }, 1500);
+  } else {
+    setTimeout(type, 100);
+  }
 }
 
 function erase() {
-    letter = currentText.slice(0, --index);
-    textElement.textContent = letter;
+  letter = currentText.slice(0, --index);
+  textElement.textContent = letter;
 
-    if (letter.length === 0) {
-        count++;
-        setTimeout(type, 200);
-    } else {
-        setTimeout(erase, 50);
-    }
+  if (letter.length === 0) {
+    count++;
+    setTimeout(type, 200);
+  } else {
+    setTimeout(erase, 50);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", type);
@@ -74,20 +74,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// click on text to pop out inside images
+
+// function toggleImages(id) {
+//   const section = document.getElementById(id);
+//   section.classList.toggle('hidden');
+// }
+
+
 function toggleImages(id) {
-  // getting element id from the targetted id in the html
+  // Get all sections
+  const sections = document.querySelectorAll('.overflow-hidden');
+
+  // Close all sections
+  sections.forEach(section => {
+    if (section.id !== id) {
+      section.classList.add('hidden');
+    }
+  });
+
+  // Toggle the current section
   const section = document.getElementById(id);
-  //max-h-0: Collapse height.
-  section.classList.toggle('max-h-0');
-  //max-h-[500px]: Expands to show.
-  section.classList.toggle('max-h-[500px]');
-  //opacity-0: Make it invisible.
-  section.classList.toggle('opacity-0');
-  //opacity-100: Fades in with transition-all
-  section.classList.toggle('opacity-100');
+  section.classList.toggle('hidden');
 }
-
-document.addEventListener('click', toggleImages);
-
-
