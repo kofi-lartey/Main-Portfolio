@@ -1,3 +1,4 @@
+
 const texts = [
   "Frontend Web Developer",
   "Photographer",
