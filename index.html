@@ -4,327 +4,840 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAL-PORTFOLIO</title>
+    <meta name="description" content="Gberbie Alpheaus Lartey - Junior Backend Web Developer specializing in Node.js, Express.js, MongoDB, and RESTful APIs">
+    <meta name="keywords" content="backend developer, node.js, express.js, mongodb, api development, web developer">
+    <meta name="author" content="Gberbie Alpheaus Lartey">
+    <title>Gberbie Alpheaus Lartey - Backend Developer Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Exile&family=Luckiest+Guy&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Rubik+Maps&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script src="./scripts/index.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --background-light: #f8fafc;
+            --background-dark: #1e293b;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-light: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link {
+            @apply text-white hover:text-yellow-400 transition-all duration-300 transform hover:scale-110;
+        }
+
+        .social-link-footer {
+            @apply text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110;
+        }
+
+        .project-card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden card-hover;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+    </style>
 </head>
 
-<body>
-    <header class="bg-[url(./images/mainbg.jpg)] h-[60vh] md:h-screen bg-no-repeat bg-cover bg-center pt-24">
-        <nav
-            class="flex flex-row justify-between md:justify-evenly items-center gap-2 md:gap-80 h-13 text-white font-bold fixed top-0 w-full absolute inset-0 backdrop-blur-sm z-50">
+<body class="bg-gray-50">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
 
-            <a href="" id="Home"><span class="font-extrabold text-2xl text-[#1B5BA2] shadow-[0_0_0px_#1B5BA2] text-[1rem] p-2  rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#1B5BA2] hover:bg-white  hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:backdrop-blur-sm">KOFILARTEY</span></a>
-            <div
-                class="flex flex-row justify-center gap-5 w-70 ">
-                <a href="#Home" title="Home">
-                    <i class="fa-solid fa-house shadow-[0_0_6px_#1B5BA2] text-[0.5rem] md:text-[1rem] p-2 border rounded-full transition ease-in-out duration-300 text-white md:text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white "></i>
-                </a>
-                <a href="#About" title="AboutUs">
-                    <i class="fa-solid fa-user-tie shadow-[0_0_6px_#1B5BA2] text-[0.5rem] md:text-[1rem] p-2 border rounded-full transition ease-in-out duration-300 text-white md:text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
-                </a>
-                <a href="#services" title="Services">
-                    <i class="fa-sharp fa-solid fa-layer-group shadow-[0_0_6px_#1B5BA2] text-[0.5rem] md:text-[1rem] p-2 rounded-full border transition ease-in-out duration-300 text-white md:text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
-                </a>
-                <a href="#pg" title="ProjectGallery">
-                    <i class="fa-brands fa-google-wallet shadow-[0_0_6px_#1B5BA2] text-[0.5rem] md:text-[1rem] p-2 rounded-full border transition ease-in-out duration-300 text-white md:text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
-                </a>
-                <a href="#resume" title="Resume">
-                    <i class="fa-solid fa-suitcase shadow-[0_0_6px_#1B5BA2] text-[0.5rem] md:text-[1rem] p-2 rounded-full border transition ease-in-out duration-300 text-white md:text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
-                </a>
-                <a href="#contact" title="ContactInfo">
-                    <i class="fa-solid fa-id-card-clip shadow-[0_0_6px_#1B5BA2] text-[0.5rem] md:text-[1rem] p-2 rounded-full border transition ease-in-out duration-300 text-white md:text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-[#2759A2] hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white"></i>
-                </a>
+    <header class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 h-screen bg-no-repeat bg-cover bg-center overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        
+        <nav class="relative z-50 flex justify-between items-center px-6 py-4 glass-effect">
+            <a href="#home" class="text-2xl font-bold text-white hover:text-yellow-400 transition-colors duration-300">
+                <span class="gradient-text">KOFILARTEY</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Home</a>
+                <a href="#about" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">About</a>
+                <a href="#services" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Services</a>
+                <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Contact</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white text-xl" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </nav>
 
-        <div class="flex flex-col md:flex-row gap-5 items-center  md:mt-5 ">
-
-            <div class=" flex flex-col text-[#1B5BA2] font-bold justify-center  md:pl-55 md:pt-5 pt-2 gap-3">
-                <h1 class="md:text-6xl text-3xl ">GBERBIE ALPHEAUS</h1>
-                <p class="md:text-4xl text-2xl">I'm a <span id="changing-text" class="text-[#1B5BA2]"></span></p>
-
-                <div class="flex gap-5 md:text-2xl items-center ">
-                    <a href="https://www.facebook.com/share/1AVWt5ruC6/"><i class="fa-brands fa-facebook shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-2 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
-                    <a href="https://www.instagram.com/kofi_lart/"><i class="fa-brands fa-instagram shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
-                    <a href="https://x.com/GberbieAlpheaus"><i class="fa-brands fa-x-twitter shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
-                    <a href="https://www.linkedin.com/in/alpheaus-gberbie-b6b141326"><i class="fa-brands fa-linkedin shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
-                    <a href="https://wa.me/+233557655008"><i class="fa-brands fa-whatsapp shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
-                    <a href="https://github.com/"><i class="fa-brands fa-github shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 rounded-full transition ease-in-out duration-300 text-[#1B5BA2] bg-transparent transition transform duration-300
-            hover:text-white hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-[#1B5BA2]"></i></a>
-                </div>
-                <a href="mailto:kofilartey12@gmail.com">
-                    <button class="text-xl w-50 md:36 mt-3 md:w-40 bg-[#1B5BA2] text-white shadow-[0_0_6px_#FFFFFF] text-[1.5rem] p-1 px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-[#1B5BA2] transition transform duration-300
-            hover:text-[#1B5BA2] hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white">HIRE ME</button>
-                </a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full glass-effect z-40">
+            <div class="flex flex-col space-y-4 p-6">
+                <a href="#home" class="text-white hover:text-yellow-400 transition-colors duration-300">Home</a>
+                <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300">About</a>
+                <a href="#services" class="text-white hover:text-yellow-400 transition-colors duration-300">Services</a>
+                <a href="#projects" class="text-white hover:text-yellow-400 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300">Contact</a>
             </div>
-            <img src="./images/Kof3.jpg" alt="">
+        </div>
+
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-center h-full px-6 text-center md:text-left">
+            <div class="md:w-1/2 space-y-6">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                    GBERBIE ALPHEAUS
+                </h1>
+                <p class="text-xl md:text-3xl text-gray-200">
+                    I'm a <span id="changing-text" class="text-yellow-400 font-semibold"></span>
+                </p>
+                <p class="text-lg text-gray-300 max-w-lg">
+                    Passionate about building robust backend systems and scalable APIs with modern technologies.
+                </p>
+
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="mailto:kofilartey12@gmail.com" 
+                       class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        Hire Me
+                    </a>
+                    <a href="#projects" 
+                       class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                </div>
+
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="https://www.facebook.com/share/1AVWt5ruC6/" class="social-link">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kofi_lart/" class="social-link">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://x.com/GberbieAlpheaus" class="social-link">
+                        <i class="fa-brands fa-x-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alpheaus-gberbie-b6b141326" class="social-link">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://wa.me/+233557655008" class="social-link">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/" class="social-link">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-30"></div>
+                    <img src="./images/Kof3.jpg" alt="Gberbie Alpheaus Lartey" 
+                         class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-2xl">
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="About" class=" bg-[url(./images/mainbg.jpg)] h-[730px] md:h-screen">
-        <div class="flex flex-col text-center justify-center items-center md:p-10 backdrop-blur-sm mt-10">
-            <a href="">
-                <h1 class="md:text-6xl text-3xl uppercase mt-10 font-extrabold text-[#1B5BA2] md:text-[#1B5BA2] text-center shadow-[0_0_0px_] md:p-2 p-2 rounded-full transition ease-in-out duration-300 bg-transparent transition transform duration-300 text-[#1B5BA2]
-            hover:text-[#1B5BA2] px-10 mt-25 hover:scale-[1.2] hover:-translate-x-[5px]
-            hover:shadow-[0_0_0px_#1B5BA2] hover:backdrop-blur-sm">Professional <br> summary</h1>
-            </a>
-            <p
-                class="w-100 md:w-260 rounded-[5%] p-10 bg-white backdrop-blur-[30px] shadow-[0px_1px_10px_1px_black]">
-                I’m Gberbie Alpheaus Lartey, a multidisciplinary professional with a unique blend of skills in backend
-                web development, music education, photography, and graphic design. I combine technical precision with
-                artistic vision to create efficient, secure, and user-friendly web solutions using HTML, CSS, and
-                JavaScript. As a music educator, I specialize in vocal coaching and have experience with piano, drums,
-                trumpet, and trombone, offering a patient and structured teaching approach. In the creative field, I’m
-                an experienced photographer and graphic designer, skilled in Adobe Photoshop and Illustrator, creating
-                visuals that communicate and inspire. With a holistic perspective and a commitment to excellence, I
-                bring creativity, clarity, and impact to every project I undertake.
-            </p>
-            <a href="./doc-fold/Gberbie-Alpheaus-New-CV.pdf">
-                <button id="resume" class="text-xl w-50   md:w-40 bg-[#1B5BA2] text-white shadow-[0_0_6px_#FFFFFF] text-[1rem] font-bold px-2 py-1.5 transition ease-in-out duration-300 text-[#1B5BA2] bg-[#1B5BA2] transition transform duration-300 mt-10 rounded-[10%]
-            hover:text-[#1B5BA2] hover:scale-[1.3] hover:-translate-y-[5px]
-            hover:shadow-[0_0_2px_#1B5BA2] hover:bg-white">Download CV</button>
-            </a>
-        </div>
-    </section>
-
-    <section
-        class=" bg-[url(./images/mainbg.jpg)] flex flex-col justify-center items-center h-full md:h-full mt-30 md:m-15 bg-[#D3D5EA] backdrop-blur-[30px] shadow-[0px_1px_10px_1px_#1B5BA2] text-[#1B5BA2] "
-        id="services">
-        <h2 class="text-2xl font-bold mb-4 font-extrabold">SERVICES & SKILLS</h2>
-
-        <!-- Photography -->
-        <div class=" border rounded-lg mb-4">
-            <button data-toggle="photography-info"
-                class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2 font-bold">
-                <i class="fas fa-camera"></i> Photography
-            </button>
-            <div id="photography-info"
-                class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
-                <p><strong>Portrait Photography:</strong> Professional headshots and personal portraits with artistic
-                    lighting and composition.</p>
-                <p><strong>Event Coverage:</strong> Capture weddings, parties, and special events with a candid and
-                    documentary style.</p>
-                <p><strong>Product Shoots:</strong> High-quality images for advertising, catalogs, or e-commerce
-                    platforms.</p>
-            </div>
-        </div>
-
-        <!-- Web Development -->
-        <div class="border rounded-lg mb-4">
-            <button data-toggle="webdev-info" class="w-full text-left p-4 font-bold hover:bg-gray-50 flex items-center gap-2">
-                <i class="fas fa-laptop-code"></i> Web Development
-            </button>
-            <div id="webdev-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
-                <p><strong>Frontend & Backend:</strong> Build responsive interfaces and robust backend systems using
-                    modern technologies.</p>
-                <p><strong>Responsive Design:</strong> Ensure websites look and work great on all screen sizes.</p>
-                <p><strong>Maintenance & Hosting:</strong> Ongoing updates, backups, and secure web hosting solutions.
-                </p>
-            </div>
-        </div>
-
-        <!-- Videographer -->
-        <div class="border rounded-lg mb-4">
-            <button data-toggle="video-info" class="w-full text-left p-4 font-bold hover:bg-gray-50 flex items-center gap-2">
-                <i class="fas fa-video"></i> Videographer
-            </button>
-            <div id="video-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
-                <p><strong>Event Coverage:</strong> Film special moments at weddings, concerts, and corporate events.
-                </p>
-                <p><strong>Music Videos:</strong> Conceptual and performance-based visuals for artists and bands.</p>
-                <p><strong>Editing & Post-Production:</strong> Professional video editing with effects, color
-                    correction, and audio mastering.</p>
-            </div>
-        </div>
-
-        <!-- Graphic Design -->
-        <div class="border rounded-lg mb-4">
-            <button data-toggle="design-info" class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2 font-bold">
-                <i class="fas fa-paint-brush"></i> Graphic Design
-            </button>
-            <div id="design-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
-                <p><strong>Logo Design:</strong> Create memorable brand identities tailored to your vision and market.
-                </p>
-                <p><strong>Posters & Flyers:</strong> Eye-catching promotional materials for events, products, and
-                    services.</p>
-                <p><strong>Social Media Graphics:</strong> Engaging content to boost your online presence and brand
-                    awareness.</p>
-            </div>
-        </div>
-
-        <!-- Professional Teacher -->
-        <div class="border rounded-lg mb-4">
-            <button data-toggle="teacher-info" class="w-full text-left p-4 hover:bg-gray-50 flex items-center gap-2 font-bold">
-                <i class="fas fa-chalkboard-teacher"></i> Professional Teacher
-            </button>
-            <div id="teacher-info" class="overflow-hidden transition-all duration-500 max-h-0 px-4 border-t space-y-2">
-                <p><strong>Vocal Coaching:</strong> Improve vocal technique, range, and confidence for all skill levels.
-                </p>
-                <p><strong>Instrument Instruction:</strong> Personalized lessons for piano, drums, trumpet, trombone,
-                    and more.</p>
-                <p><strong>Music Theory & Performance:</strong> Build a solid foundation and enhance stage presence.</p>
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto"></div>
             </div>
 
-        </div>
-        <div class="flex flex-row justify-evenly text-6xl text-[#1B5BA2] ">
-            <div class="flex flex-col bg-white p-5 rounded-[10%] text-center">
-                <i class="fa-brands fa-html5 transition-all duration-300 transform hover:scale-200 hover:shadow-[0-0-20px-#59B2F4]"></i>
-                
-                <h1 class="text-sm font-extrabold text-center text-white rounded-[15%] border p-1 bg-[#032B44] transition-all duration-300 transform hover:scale-105 hover:shadow-[0-0-20px-#59B2F4]">HTML</h1>
-            </div>
-            <div class="flex flex-col bg-white p-4 rounded-[10%] text-center">
-                <i class="fa-brands fa-js transition-all duration-300 transform hover:scale-200 hover:shadow-[0-0-20px-#59B2F4]"></i>
-                <h1 class="text-sm font-extrabold text-center text-white rounded-[15%] border p-1 bg-[#032B44] transition-all duration-300 transform hover:scale-105 hover:shadow-[0-0-20px-#59B2F4]">JavaScript</h1>
-            </div>
-            <div class="flex flex-col bg-white p-5 rounded-[10%] text-center">
-                <i class="fa-brands fa-css3 transition-all duration-300 transform hover:scale-200 hover:shadow-[0-0-20px-#59B2F4]"></i>
-                
-                <h1 class="text-sm font-extrabold text-center text-white rounded-[15%] border p-1 bg-[#032B44] transition-all duration-300 transform hover:scale-105 hover:shadow-[0-0-20px-#59B2F4]">CSS</h1>
-            </div>
-            
-        </div>
-
-    </section>
-
-    <section id="pg" class="bg-[#CFD1E6] h-full md:h-full mt-20 mb-10 ">
-        <h1 class="text-2xl md:text-5xl mb-4 text-[#1B5BA2] font-extrabold text-center m-10 mb-10 overflow-hidden">Project Gallery</h1>
-        <div class="flex flex-col gap-10 justify-between items-center space-y-6 transform">
-            <!-- container that holds both text and pictures -->
-            <div class="flex flex-col gap-5 justify-between text-center ">
-                <!-- Trigger Text -->
-                <h1 class="text-blue-600 cursor-pointer uppercase text-2xl font-bold mb-4 font-extrabold text-[#1B5BA2] " onclick="toggleImages('Image1')" id="photomoto">
-                    Photography</h1>
-                <!-- Hidden Text -->
-                <div id="Image1" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/photo3.jpg" alt="1">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/photo4.jpg" alt="2">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/photo2.jpg" alt="3">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-semibold text-gray-900">Junior Backend Web Developer</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        I'm Gberbie Alpheaus Lartey, a passionate junior backend web developer focused on building robust and scalable web applications. 
+                        I specialize in Node.js and Express.js, creating RESTful APIs with proper authentication and database management.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Currently learning MongoDB, Postman for API testing, and other modern backend technologies. 
+                        I'm eager to contribute to real-world projects and grow as a developer while expanding my skills in the ever-evolving world of web development.
+                    </p>
+                    
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <a href="./doc-fold/Gberbie-Alpheaus-CV.pdf" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                            Download CV
+                        </a>
+                        <a href="#contact" 
+                           class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                            Get In Touch
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <!-- container that holds both text and pictures -->
-            <div class="flex flex-col gap-5 justify-between text-center ">
-                <!-- Trigger Text -->
-                <h1 class="text-blue-600 cursor-pointer uppercase text-2xl font-bold mb-4 font-extrabold text-[#1B5BA2]" onclick="toggleImages('Images2')" id="wd">Web
-                    Development</h1>
-                <!-- Hidden Text -->
-                <div id="Images2" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/wd1.jpg" alt="1">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/wd2.jpg" alt="2">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/wd3.jpg" alt="3">
-                </div>
-            </div>
-            <!-- container that holds both text and pictures -->
-            <div class="flex flex-col gap-5 justify-between text-center">
-                <!-- Trigger Text -->
-                <h1 class="text-blue-600 cursor-pointer uppercase text-2xl font-bold mb-4 font-extrabold text-[#1B5BA2] " onclick="toggleImages('Images3')" id="vid">
-                    Videography</h1>
-                <!-- Hidden Text -->
-                <div id="Images3" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/vid1.jpg" alt="1">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black] " src="./images/vid2.jpg" alt="2">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/vid4.jpg" alt="3">
-                </div>
-            </div>
-            <!-- container that holds both text and pictures -->
-            <div class="flex flex-col gap-5 justify-between text-center ">
-                <!-- Trigger Text -->
-                <h1 class="text-blue-600 cursor-pointer uppercase text-2xl font-bold mb-4 font-extrabold text-[#1B5BA2]" onclick="toggleImages('Images4')" id="gd">Graphic
-                    Design</h1>
-                <!-- Hidden Text -->
-                <div id="Images4" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/gd1.jpg" alt="1">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/gd2.jpg" alt="2">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/gd3.jpg" alt="3">
-                </div>
-            </div>
-            <!-- container that holds both text and pictures -->
-            <div class="flex flex-col gap-5 justify-between text-center">
-                <!-- Trigger Text -->
-                <h1 class="text-blue-600 cursor-pointer uppercase text-2xl font-bold mb-4 font-extrabold text-[#1B5BA2] " onclick="toggleImages('Images5')" id="pt">
-                    Professional Teacher</h1>
-                <!-- Hidden Text -->
-                <div id="Images5" class="overflow-hidden hidden transition-all duration-500 grid grid-cols-3 gap-4">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/pt1.jpg" alt="1">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/pt3.jpg" alt="2">
-                    <img class="w-60 rounded-[10%] backdrop-blur-[30px] shadow-[0px_2px_3px_0px_black]" src="./images/pt4.jpg" alt="3">
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl text-center">
+                        <i class="fa-solid fa-code text-4xl text-blue-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Clean Code</h4>
+                        <p class="text-gray-600 text-sm">Writing maintainable and well-documented code</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl text-center">
+                        <i class="fa-solid fa-server text-4xl text-yellow-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Backend Focus</h4>
+                        <p class="text-gray-600 text-sm">Specialized in server-side development</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl text-center">
+                        <i class="fa-solid fa-database text-4xl text-green-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Database Design</h4>
+                        <p class="text-gray-600 text-sm">Efficient data modeling and management</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl text-center">
+                        <i class="fa-solid fa-shield-alt text-4xl text-purple-600 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Security First</h4>
+                        <p class="text-gray-600 text-sm">Implementing proper authentication</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 px-6  bg-[#CFD1E6] text-white">
-        <h2 id="contact" class="text-4xl font-bold text-center mb-10">
-            Contact <span class="text-[#1B5BA2]">Me</span>
-        </h2>
-
-        <form action="#" class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input type="text" placeholder="Full Name"
-                class="w-full px-4 py-3 rounded bg-[#1B5BA2] text-white focus:outline-none" />
-
-            <input type="email" placeholder="Email Address"
-                class="w-full px-4 py-3 bg-[#1B5BA2] text-white focus:outline-none" />
-
-            <input type="text" placeholder="Mobile Number"
-                class="w-full px-4 py-3 rounded bg-[#1B5BA2] text-white focus:outline-none" />
-
-            <input type="text" placeholder="Email Subject"
-                class="w-full px-4 py-3 rounded bg-[#1B5BA2] text-white focus:outline-none" />
-
-            <!-- Full width for message area -->
-            <textarea placeholder="Your Message" rows="6"
-                class="md:col-span-2 w-full px-4 py-3 rounded bg-[#1B5BA2] text-white focus:outline-none"></textarea>
-
-            <!-- Button centered below -->
-            <div class="md:col-span-2 text-center">
-                <button type="submit"
-                    class="bg-[#1B5BA2] text-white font-bold px-8 py-3 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-[0-0-20px-#59B2F4] focus:outline-none">
-                    Send Message
-                </button>
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Services & <span class="gradient-text">Skills</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto"></div>
             </div>
-        </form>
+
+            <!-- Services Accordion -->
+            <div class="max-w-4xl mx-auto space-y-4 mb-16">
+                <!-- Backend Development -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="backend-info"
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-server text-2xl text-blue-600"></i>
+                            <span>Backend Development</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="backend-info"
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-blue-600">Node.js & Express.js:</strong> Building scalable server-side applications with modern JavaScript.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-blue-600">RESTful APIs:</strong> Creating efficient and well-documented APIs for web and mobile applications.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-blue-600">Database Management:</strong> Working with MongoDB and implementing proper data models.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-blue-600">Authentication:</strong> Implementing secure user authentication and authorization systems.</p>
+                            <p class="text-gray-700"><strong class="text-blue-600">API Testing:</strong> Using Postman for comprehensive API testing and documentation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Teaching -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="teaching-info"
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-chalkboard-teacher text-2xl text-green-600"></i>
+                            <span>Professional Teaching</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="teaching-info"
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">Curriculum Development:</strong> Creating comprehensive learning materials and lesson plans.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">Student Assessment:</strong> Evaluating student progress and providing constructive feedback.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">Classroom Management:</strong> Maintaining an effective learning environment.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">Technology Integration:</strong> Incorporating modern tools and methods in teaching.</p>
+                            <p class="text-gray-700"><strong class="text-green-600">Professional Development:</strong> Continuous learning and skill enhancement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photography -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="photography-info"
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-camera text-2xl text-purple-600"></i>
+                            <span>Photography</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="photography-info"
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Portrait Photography:</strong> Capturing professional and personal portraits.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Event Photography:</strong> Documenting special occasions and celebrations.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Photo Editing:</strong> Post-processing and enhancing images.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Equipment Management:</strong> Professional camera and lighting setup.</p>
+                            <p class="text-gray-700"><strong class="text-purple-600">Creative Composition:</strong> Artistic framing and visual storytelling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Videography -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="videography-info"
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-video text-red-600"></i>
+                            <span>Videography</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="videography-info"
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-red-600">Video Production:</strong> Creating high-quality video content.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-red-600">Video Editing:</strong> Post-production and video enhancement.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-red-600">Storytelling:</strong> Narrative development and visual storytelling.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-red-600">Equipment Operation:</strong> Professional video cameras and audio equipment.</p>
+                            <p class="text-gray-700"><strong class="text-red-600">Content Creation:</strong> Educational and promotional video content.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Development -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="api-info" 
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-code text-2xl text-yellow-600"></i>
+                            <span>API Development</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="api-info" 
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-yellow-600">RESTful Design:</strong> Implementing proper HTTP methods and status codes.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-yellow-600">Authentication & Authorization:</strong> Securing APIs with JWT and user management.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-yellow-600">API Testing:</strong> Using Postman for comprehensive API testing and documentation.</p>
+                            <p class="text-gray-700"><strong class="text-yellow-600">Error Handling:</strong> Implementing robust error handling and validation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Management -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="database-info" 
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-database text-2xl text-green-600"></i>
+                            <span>Database Management</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="database-info" 
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">MongoDB:</strong> Working with NoSQL databases and document-based data models.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">Data Modeling:</strong> Designing efficient database schemas and relationships.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-green-600">Data Validation:</strong> Implementing proper data validation and error handling.</p>
+                            <p class="text-gray-700"><strong class="text-green-600">Performance Optimization:</strong> Optimizing database queries and performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="webdev-info" 
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-laptop-code text-2xl text-purple-600"></i>
+                            <span>Web Development</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="webdev-info" 
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Backend web Development:</strong> Building backend web applications for Frontenders.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Responsive Design:</strong> Ensuring applications work well on all devices and screen sizes.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-purple-600">Performance Optimization:</strong> Optimizing applications for speed and efficiency.</p>
+                            <p class="text-gray-700"><strong class="text-purple-600">Modern Technologies:</strong> Using the latest web development tools and frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Control -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <button data-toggle="git-info" 
+                        class="w-full text-left p-6 hover:bg-gray-50 flex items-center justify-between font-bold text-lg transition-all duration-300">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-code-branch text-2xl text-indigo-600"></i>
+                            <span>Version Control</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div id="git-info" 
+                        class="overflow-hidden transition-all duration-500 max-h-0 px-6 border-t space-y-4">
+                        <div class="py-4">
+                            <p class="text-gray-700 mb-3"><strong class="text-indigo-600">Git & GitHub:</strong> Managing code versions and collaborating with other developers.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-indigo-600">Branch Management:</strong> Working with feature branches and pull requests.</p>
+                            <p class="text-gray-700 mb-3"><strong class="text-indigo-600">Code Review:</strong> Participating in code reviews and maintaining code quality.</p>
+                            <p class="text-gray-700"><strong class="text-indigo-600">Collaboration:</strong> Working effectively in team environments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-brands fa-node-js text-6xl text-green-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">Node.js</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-brands fa-js text-6xl text-yellow-500 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">JavaScript</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-database text-6xl text-blue-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">MongoDB</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-code text-6xl text-purple-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">Express.js</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-chalkboard-teacher text-6xl text-green-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">Teaching</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-camera text-6xl text-purple-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">Photography</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-video text-6xl text-red-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">Videography</h4>
+                </div>
+                <div class="skill-card bg-white p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-graduation-cap text-6xl text-blue-600 mb-4"></i>
+                    <h4 class="font-semibold text-gray-900">Education</h4>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- FOOTER -->
-    <footer class="bg-[#1B5BA2] text-center text-white py-6 mt-10">
-        <p class="text-sm">&copy; 2025 by Gberbie Alpheaus Lartey | All Rights Reserved</p>
-        <div class="mt-4">
-            <a id="Home" href=""
-                class="inline-flex items-center justify-center bg-white text-[#1B5BA2] w-10 h-10 rounded-md hover:shadow-lg transition">
-                <i id="Home" class="fa-solid fa-angles-up"></i>
-            </a>
+
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Project <span class="gradient-text">Gallery</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-yellow-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Backend Projects -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/wd1.jpg" alt="E-commerce API" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">E-commerce API</h4>
+                        <p class="text-gray-600 text-sm mb-3">RESTful API for online shopping platform with Node.js and MongoDB</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Node.js</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">MongoDB</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Express.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/wd2.jpg" alt="Task Management API" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Task Management API</h4>
+                        <p class="text-gray-600 text-sm mb-3">API for project and task management with JWT authentication</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Node.js</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">JWT</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/wd3.jpg" alt="Blog API" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Blog API</h4>
+                        <p class="text-gray-600 text-sm mb-3">Content management system API with RESTful endpoints</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Node.js</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">MongoDB</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">REST API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Projects -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/pt1.jpg" alt="Curriculum Development" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Curriculum Development</h4>
+                        <p class="text-gray-600 text-sm mb-3">Comprehensive learning materials and lesson plans</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Education</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Planning</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Development</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/pt2.jpg" alt="Student Assessment" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Student Assessment</h4>
+                        <p class="text-gray-600 text-sm mb-3">Evaluating student progress and providing feedback</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Assessment</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Feedback</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Evaluation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/pt3.jpg" alt="Technology Integration" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Technology Integration</h4>
+                        <p class="text-gray-600 text-sm mb-3">Incorporating modern tools in teaching methods</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Technology</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Integration</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photography Projects -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/photo2.jpg" alt="Portrait Photography" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Portrait Photography</h4>
+                        <p class="text-gray-600 text-sm mb-3">Professional and personal portrait sessions</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Portraits</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Professional</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Studio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/photo3.jpg" alt="Event Photography" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Event Photography</h4>
+                        <p class="text-gray-600 text-sm mb-3">Special occasions and celebrations</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Events</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Celebrations</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/photo4.jpg" alt="Photo Editing" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Photo Editing</h4>
+                        <p class="text-gray-600 text-sm mb-3">Post-processing and image enhancement</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Editing</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Post-processing</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Enhancement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Videography Projects -->
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/vid1.jpg" alt="Video Production" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Video Production</h4>
+                        <p class="text-gray-600 text-sm mb-3">High-quality video content creation</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Production</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Content</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/vid2.jpg" alt="Video Editing" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Video Editing</h4>
+                        <p class="text-gray-600 text-sm mb-3">Post-production and video enhancement</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Editing</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Post-production</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Enhancement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <div class="relative overflow-hidden">
+                        <img src="./images/vid3.jpg" alt="Content Creation" class="w-full h-48 object-cover rounded-t-xl transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="opacity-0 group-hover:opacity-100 transition-all duration-300 text-white text-center">
+                                <i class="fas fa-external-link-alt text-2xl mb-2"></i>
+                                <p class="text-sm">View Project</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Content Creation</h4>
+                        <p class="text-gray-600 text-sm mb-3">Educational and promotional video content</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">Content</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Educational</span>
+                            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Promotional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Get In <span class="text-yellow-400">Touch</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Full Name" required
+                           class="w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300" />
+                    
+                    <input type="email" name="email" placeholder="Email Address" required
+                           class="w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300" />
+                    
+                    <input type="tel" name="phone" placeholder="Mobile Number"
+                           class="w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300" />
+                    
+                    <input type="text" name="subject" placeholder="Email Subject" required
+                           class="w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300" />
+                    
+                    <textarea name="message" placeholder="Your Message" rows="6" required
+                              class="md:col-span-2 w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300 resize-none"></textarea>
+                    
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit"
+                                class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold px-12 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg mb-4">&copy; 2025 Gberbie Alpheaus Lartey | All Rights Reserved</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.facebook.com/share/1AVWt5ruC6/" class="social-link-footer">
+                    <i class="fa-brands fa-facebook text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/kofi_lart/" class="social-link-footer">
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                </a>
+                <a href="https://x.com/GberbieAlpheaus" class="social-link-footer">
+                    <i class="fa-brands fa-x-twitter text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpheaus-gberbie-b6b141326" class="social-link-footer">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://wa.me/+233557655008" class="social-link-footer">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+                <a href="https://github.com/" class="social-link-footer">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+            </div>
+            <button id="scroll-to-top" 
+                    class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <i class="fa-solid fa-angles-up"></i>
+            </button>
         </div>
     </footer>
 
