@@ -19,7 +19,7 @@ const CreativeStack = () => {
                         </div>
                         <h3 className="text-white text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Backend Development</h3>
                         <p className="text-gray-400 max-w-md mb-6 text-sm sm:text-base">
-                            Architecting robust, scalable server-side systems. Specialist in Node.js, Go, and distributed cloud infrastructures.
+                            Architecting robust, scalable server-side systems. Specialist in Node.js, MongoDB, Express.JS, NeonDB and distributed cloud infrastructures.
                         </p>
                         <div className="flex flex-wrap gap-2 sm:gap-3">
                             {['PostgreSQL', 'MongoDB', 'Express.js', 'Node.js'].map(tag => (
