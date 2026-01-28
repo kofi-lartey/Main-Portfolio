@@ -19,7 +19,7 @@ const CreativeStack = () => {
                         <h3 className="text-white text-3xl font-bold mb-4">Backend Development</h3>
                         <p className="text-gray-400 max-w-md mb-6">Architecting robust, scalable server-side systems. Specialist in Node.js, Go, and distributed cloud infrastructures.</p>
                         <div className="flex gap-3">
-                            {['AWS', 'Kubernetes', 'GraphQL'].map(tag => (
+                            {['PostgreSQL','MongoDB','Express.js','Node,js'].map(tag => (
                                 <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded text-[10px] font-bold text-gray-400 uppercase tracking-widest">{tag}</span>
                             ))}
                         </div>
