@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import BlogPostView from './Components/BlogPostView';
+import ScrollToTop from './Components/ScrollToTop';
 
 // Pages
 import HomePage from './Pages/HomPage';
@@ -49,7 +50,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog/:id" element={<BlogPostView />} />
-        <Route path="/comingSoon" element={<ComingSoon/>} />
+        <Route path="/comingSoon" element={<ComingSoon />} />
 
         {/* --- NEW SERVICE ROUTES --- */}
         <Route path="/services" element={<ServiceHub />} />

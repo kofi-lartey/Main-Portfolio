@@ -67,11 +67,11 @@ const Footer = () => {
                 <div className="space-y-6 lg:pl-12">
                     <h4 className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em]">Navigation</h4>
                     <ul className="space-y-3">
-        
-                        <li><Link to="/about" className="text-gray-500 hover:text-white text-sm transition-colors">About</Link></li>
-                        <li><Link to="/services" className="text-gray-500 hover:text-white text-sm transition-colors">Services</Link></li>
-                        <li><Link to="/projects" className="text-gray-500 hover:text-white text-sm transition-colors">Project</Link></li>
-                        <li><Link to="/comingSoon" className="text-gray-500 hover:text-white text-sm transition-colors">Admin</Link></li>
+
+                        <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="text-gray-500 hover:text-white text-sm transition-colors">About</Link></li>
+                        <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="text-gray-500 hover:text-white text-sm transition-colors">Services</Link></li>
+                        <li><Link to="/projects" onClick={() => window.scrollTo(0, 0)} className="text-gray-500 hover:text-white text-sm transition-colors">Project</Link></li>
+                        <li><Link to="/comingSoon" onClick={() => window.scrollTo(0, 0)} className="text-gray-500 hover:text-white text-sm transition-colors">Admin</Link></li>
                     </ul>
                 </div>
 
@@ -86,6 +86,7 @@ const Footer = () => {
                             <li key={item.name}>
                                 <Link
                                     to={item.path}
+                                    onClick={() => window.scrollTo(0, 0)}
                                     className="text-gray-500 hover:text-white text-sm transition-colors flex items-center gap-2 group"
                                 >
                                     {item.name}

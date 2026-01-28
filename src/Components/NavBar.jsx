@@ -41,6 +41,7 @@ const NavBar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
+                            onClick={() => window.scrollTo(0, 0)}
                             className={`text-[15px] font-medium transition-all duration-300 hover:text-white ${location.pathname === link.path ? 'text-white' : 'text-gray-400'
                                 }`}
                         >
