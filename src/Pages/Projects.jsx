@@ -185,6 +185,18 @@ const Projects = () => {
             tags: ['HTML','css','JavaScript','Team Project'],
             size: 'wide'
         },
+        {
+            id: 15,
+            category: 'Tech',
+            title: 'Techtoon Portfolio',
+            subtitle: 'A cartoon Like Portfolio Website',
+            image: 'https://res.cloudinary.com/djjgkezui/image/upload/v1770404210/Screenshot_2026-02-06_183740_d8plfw.png',
+            projectUrl: 'https://spontaneous-quokka-950c3a.netlify.app/testimonials',
+            sourceCodeUrl: 'https://github.com/kofi-lartey/Demo-Portfolio-1',
+            status: 'ACTIVE',
+            tags: ['React','TailwindCss','JavaScript'],
+            size: 'wide'
+        },
     ];
 
     const filteredProjects = filter === 'All'
