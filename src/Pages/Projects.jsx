@@ -21,16 +21,20 @@ const Projects = () => {
     const [activeMedia, setActiveMedia] = useState(null);
 
     const projectData = [
-        // {
-        //     id: 1,
-        //     category: 'Music',
-        //     tag: 'Creative',
-        //     title: 'Beneray Branding',
-        //     description: 'Identity and visual language for a high-fidelity boutique audio collective.',
-        //     image: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80',
-        //     mediaUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-        //     size: 'large'
-        // },
+        {
+            id: 1,
+            category: 'Tech',
+            tag: 'Creative',
+            title: 'kofiLartey-Studios',
+            description: 'Photography sharing Images at easy using kofiLartey-Studios',
+            image: 'https://res.cloudinary.com/djjgkezui/image/upload/v1778842251/Screenshot_2026-05-15_183728_wzkxcu.png',
+            projectUrl: 'https://kofilartey-studios.netlify.app/',
+            sourceCodeUrl: 'https://github.com/kofi-lartey/kofiLartey-Studios',
+            status: 'ACTIVE',
+            tags: ['NODE.JS', "Express.js", "MongoDB", "Cloudinary", "Brevo","Full-Stack"],
+            details: ['MongoDB', 'RESTful','Cloudinary', 'Brevo'],
+            size: 'horizontal'
+        },
         {
             id: 2,
             category: 'Tech',
@@ -182,7 +186,7 @@ const Projects = () => {
             projectUrl: 'https://emerald-d-d-game.vercel.app/',
             sourceCodeUrl: 'https://github.com/kofi-lartey/Emerald-D-D-Game',
             status: 'ACTIVE',
-            tags: ['HTML','css','JavaScript','Team Project'],
+            tags: ['HTML', 'css', 'JavaScript', 'Team Project'],
             size: 'wide'
         },
         {
@@ -194,7 +198,7 @@ const Projects = () => {
             projectUrl: 'https://spontaneous-quokka-950c3a.netlify.app/testimonials',
             sourceCodeUrl: 'https://github.com/kofi-lartey/Demo-Portfolio-1',
             status: 'ACTIVE',
-            tags: ['React','TailwindCss','JavaScript'],
+            tags: ['React', 'TailwindCss', 'JavaScript'],
             size: 'wide'
         },
     ];
